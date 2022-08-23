@@ -14,15 +14,9 @@
  */
 func deleteDuplicates(head *ListNode) *ListNode {
     v := head
-	is_deleted := false
 	for v != nil && v.Next != nil {
-		is_deleted = false
 		if v.Val == v.Next.Val {
-			(*v).Next = v.Next.Next
-			is_deleted = true
-		}
-		if is_deleted {
-			v = head
+			v.Next = v.Next.Next
 		} else {
 			v = v.Next
 		}
